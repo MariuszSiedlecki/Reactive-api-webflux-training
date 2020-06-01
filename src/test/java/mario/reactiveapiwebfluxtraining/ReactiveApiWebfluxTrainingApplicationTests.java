@@ -11,7 +11,7 @@ import reactor.core.publisher.Mono;
 class ReactiveApiWebfluxTrainingApplicationTests {
 
     @Test
-    void contextLoads() {
+    void should_context_loads() {
 
         Flux.just("Pankracy", "Gerwazy", "Piotr", "Ania")
                 .map(String::toLowerCase)
@@ -20,6 +20,17 @@ class ReactiveApiWebfluxTrainingApplicationTests {
         Mono.just("Leon")
                 .map(String::toUpperCase)
                 .subscribe(element -> logger.info(element));
+    }
+    @Test
+    void should_context_load_if_its_empty() {
+
+        Flux.just("Pankracy", "Gerwazy", "Piotr", "Ania")
+                .map(String::isEmpty)
+                .subscribe(element -> logger.info(element.toString()));
+
+        Mono.just("")
+                .map(String::isEmpty)
+                .subscribe(element -> logger.info(element.toString()));
     }
 
 
