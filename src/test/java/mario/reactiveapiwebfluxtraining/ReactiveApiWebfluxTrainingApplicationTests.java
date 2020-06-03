@@ -8,7 +8,8 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @SpringBootTest
-class ReactiveApiWebfluxTrainingApplicationTests {
+public class ReactiveApiWebfluxTrainingApplicationTests {
+    Logger logger = LoggerFactory.getLogger(ReactiveApiWebfluxTrainingApplicationTests.class);
 
     @Test
     void should_context_loads() {
