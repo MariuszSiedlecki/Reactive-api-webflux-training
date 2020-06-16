@@ -33,7 +33,7 @@ class PersonApiTest {
             .jsonPath("$.lastName").isEqualTo("Miły");
     }
     @Test
-    public void should_get_List_Persons(){
+    public void should_get_list_persons(){
         webTestClient.get()
                 .uri("http://localhost:8080")
                 .exchange()
@@ -41,7 +41,7 @@ class PersonApiTest {
                 .expectBodyList(Person.class);
     }
     @Test
-    public void should_not_get_List_Persons(){
+    public void should_not_get_list_persons(){
         webTestClient.get()
                 .uri("http://localhost:8080")
                 .exchange()
